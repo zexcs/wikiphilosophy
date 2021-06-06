@@ -1,7 +1,8 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const startingSlug = "/wiki/Special:Random";
+const RANDOM = "Special:Random";
+const startingSlug = `/wiki/${process.argv.slice(2)[0] || RANDOM}`;
 const goal = "/wiki/Philosophy";
 
 // Returns true if an element is in parentheses otherwise returns false
